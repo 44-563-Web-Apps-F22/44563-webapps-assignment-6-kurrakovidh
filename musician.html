@@ -24,24 +24,22 @@
 
     <script>
 
-        var correct = 0;
-        var wrong = 0;
+        correct = 0
+        wrong = 0
         function checkGuess() {
+            console.log("Getting form values")
             age = document.getElementById("form1_age").value
-            input = document.getElementById("form1_nick").value
-            if (age === input) {
+            nick = document.getElementById("form1_nick").value
+
+            out = document.getElementById("result")
+            if (age == nick) {
                 correct = correct + 1
+                out.innerHTML = "correct - " + correct + "," + "wrong - " + wrong
                 alert("You got it right")
             } else {
                 wrong = wrong + 1
+                out.innerHTML = "correct - " + correct + "," + "wrong - " + wrong
                 alert("Wrong Musician")
-            }
-
-            out = document.getElementById("result")
-            if (correct) {
-                out.innerHTML = correct
-            } else {
-                out.innerHTML = wrong
             }
         }
     </script>
