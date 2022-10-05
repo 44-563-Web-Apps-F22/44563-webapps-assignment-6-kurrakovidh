@@ -22,10 +22,17 @@
 
     <p id="result"> Result Storing </p>
 
+    <div class="container">
+        <img src="Killer ant.jpg" id="image"  alt="killer ant" style="width:100px; height:100px;">    
+        <br>
+        <button onclick="swapImage()">swapImage</button>        
+    </div>
+
     <script>
 
         correct = 0
         wrong = 0
+        useimage=1
         function checkGuess() {
             console.log("Getting form values")
             age = document.getElementById("form1_age").value
@@ -42,19 +49,30 @@
                 alert("Wrong Musician")
             }
         }
+
+        function swapImage(){
+            switch(useimage){
+                case 1:useimage=useimage+1
+                image.src="Killer ant.jpg";
+                break;
+                case 2: useimage=useimage+1
+                image.src="Kissing bug.jpeg";
+                break;
+                case 3: useimage=1
+                image.src="Red ants.jpg";
+                break;
+                
+            }
+        }
+
     </script>
 
-    <div>
-        <div class="container">
-            <img src="Killer ant.jpg" alt="killer ant" width="100" height="100">
-            <br>
-            <button onclick="swapImage()">swapImage</button>
-        </div>
-    </div>
 
-    <script>
+        
+    
 
-    </script>
+
+ 
 
 </body>
 
