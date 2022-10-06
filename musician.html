@@ -3,29 +3,33 @@
 
 <title>Lab - 6 </title>
 
-<h1>Musician guess by Kovidh Kurra</h1>
-
+<h1 style="text-align:center;">Musician guess by Kovidh Kurra</h1>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 <body>
 
     <h2>Getting input</h2>
 
     <form>
         <label for="form1_age">Enter the secret musician name</label>
-        <input type="password" id="form1_ag-e" name="form1_age" min=10 max=50 step=2 value="John Lennon"> <br>
+        <input type="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value="John Lennon"> <br>
 
         <label for="form1_nick">Guess the musician</label>
         <input type="text" id="form1_nick" name="form1_nick" autofocus> <br>
 
         <input type="button" onclick="checkGuess()" value="Check the guess">
     </form>
-    <p id="result"> Result Storing </p>
 
-  
 
     <div class="container">
         <img src="Killer ant.jpg" id="image" onclick="swapImage()" alt="killer ant" style="width:100px; height:100px;">
-        
+
     </div>
+    <p id="result"> Result Storing </p>
 
     <script>
 
@@ -46,6 +50,9 @@
                 wrong = wrong + 1
                 out.innerHTML = "correct - " + correct + "," + "wrong - " + wrong
                 alert("Wrong Musician")
+                if (wrong >= 3) {
+                    showAlert();
+                }
             }
         }
 
@@ -62,7 +69,11 @@
                     break;
             }
         }
+        function showAlert() {
+            alert("Sorry, game over.");
+        }
 
     </script>
 </body>
+
 </html>
